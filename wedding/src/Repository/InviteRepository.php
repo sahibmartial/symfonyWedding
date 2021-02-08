@@ -47,4 +47,29 @@ class InviteRepository extends ServiceEntityRepository
         ;
     }
     */
+    //findOneByEmail fonction dedié a utilisé
+/*
+    public function findOneByEmail($email)
+    {
+        return $this->createQueryBuilder('i')
+            ->andWhere('i.email= :val')
+            ->setParameter('val', $email)
+            ->orderBy('i.id', 'ASC')
+
+            ->getQuery()
+            ->getResult()
+        ;
+    }*/
+
+     public function findListeInviteByLien($lien)
+    {
+        return $this->createQueryBuilder('i')
+            ->andWhere('i.lien= :lien')
+            ->setParameter('lien', $lien)
+            ->orderBy('i.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
 }

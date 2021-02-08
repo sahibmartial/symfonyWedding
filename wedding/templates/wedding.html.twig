@@ -6,12 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>{% block title%} Wedding-Martial_Alix{% endblock %}</title>
+    <title>{% block title %}Adjah-MARTIAL_ALIX{% endblock %}
 
     <!-- Bootstrap core CSS -->
-  
-    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
-     <link href="{{asset('assets/css/wedding.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/weeding.css')}}">
 
     <style>
         .bd-placeholder-img {
@@ -30,69 +29,54 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    
     <link href="{{asset('assets/css/carousel.css')}}" rel="stylesheet">
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-        <a class="navbar-brand" href="{{path('adjah')}}">ADjah</a>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top  bg-primary">
+        <a class="navbar-brand" href="">ADJAH</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{path('invite')}}">Invitation</a>
+                    <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{path('prestation')}}">Qui nous sommes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{path('contact')}}">Nous contactez</a>
+                    <a class="nav-link" href="#">Link</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
-
-            <!--<form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>-->
+            Pour recevoir une invitation
+            <a href=""><img src="{{ asset('assets/img/invitation.png')}}" alt="wedding" class="cart-icon"></a>
         </div>
-         Votre invitation   
-            <a href="{{path('invite')}}"><img src="{{ asset('assets/img/invitation.png')}}" alt="wedding" class="cart-icon">
-               
-           </a>      
-           
-
     </nav>
 </header>
 
 <main role="main">
 
-{% if block('carousel') is defined %}
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-             {% for key, header in headers %}
-            <li data-target="#myCarousel" data-slide-to="{{ key }}" {% if key==0 %}class="active"> {% endif %}</li>
-            
-          {% endfor %}
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+           
         </ol>
         <div class="carousel-inner">
-            {% for key, header in headers %}
-            <div class="carousel-item {% if key==0 %} active {% endif %}" style="background: url('/uploads/{{header.illustration}}');background-size:cover;">
+            <div class="carousel-item active">
+                <img src="{{ asset('assets/img/alixM.jpg')}}" alt="wedding1" class="cart-icon">
                 
                 <div class="container">
                     <div class="carousel-caption text-left">
-                        <h1>{{header.title}}</h1>
-                        <p>{{header.content}}</p>
-                        <p><a class="btn btn-lg btn-primary" href="{{path('invite')}}" role="button">{{header.bouton}}</a></p>
+                        <h1></h1>
+                        <p></p>
+                        <p><a class="btn btn-lg btn-primary" href="{{route('getinvite')}}" role="button">Wedding-Invitation</a></p>
                     </div>
                 </div>
             </div>
-           {% endfor %}
+           
             
         </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -102,22 +86,38 @@
         <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a>
-    </div> 
-     <center> <p><a href="#bottom"> Decouvrir le duo parfait</a></p></center>
+        </a>    
+         
+    </div>
+    
+    <center> <p><a href="#bottom"> Decouvrir le duo parfait</a></p></center>
          <span id="bottom"></span>
-               
-     <!-- START THE FEATURETTES -->
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+        <!-- Here content  -->
+        
+           
+         
+
+        <!-- START THE FEATURETTES -->
 
         <hr class="featurette-divider">
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">{{features[1].name}}. <span class="text-muted">{{features[1].subtitle}}.</span></h2>
-                <p class="lead">{{features[1].content}}.<small>Proverbes 18:22</small></p>
+                <h2 class="featurette-heading">Alix. <span class="text-muted">Mon CALK royal. </span></h2>
+                <p class="lead">Femme battante, dynamique, devouée et de qualité...<br>
+                    Celui qui trouve une femme trouve le bonheur;c'est une grâce qu'il obtient de l'Eternel.<small>Proverbes 18:22</small> <br></p>
             </div>
             <div class="col-md-5">
-               <img src="{{ asset('assets/img/Alixone.jpg')}}" class="img-fluid" alt="Alix">
+                 <img src="{{ asset('assets/img/Alixone.jpg')}}" class="img-fluid" alt="wedding6">
+                
             </div>
         </div>
 
@@ -125,29 +125,26 @@
 
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">{{features[0].name}}. <span class="text-muted">{{features[0].subtitle}}</span></h2>
-                <p class="lead">{{features[0].content}}.<small>Cantiques 5:16</small></p>
+                <h2 class="featurette-heading">Martial. <span class="text-muted">Mon CHAMPION.</span></h2>
+                <p class="lead">
+                Homme de foi, exceptionnel, courageux et attentionné..<br>
+                 Son palais n'est que douceur, Et toute sa personne est pleine de charme.<br>
+                 Tel est mon bien-aimé, tel est mon ami.....<small>Cantiques 5:16</small> </p>
             </div>
             <div class="col-md-5 order-md-1">
-               <img src="{{ asset('assets/img/marti2.jpg')}}" class="img-fluid" alt="Martial">
+                <img src="{{ asset('assets/img/marti2.jpg')}}" class="img-fluid" alt="wedding6">
+                
             </div>
         </div>
+        
 
         <hr class="featurette-divider">
 
         <!-- /END THE FEATURETTES -->
 
-{% endif %}
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing {% if block('carousel') is not defined %}mt-5{% endif %}">
-        <!-- Here content  -->
-        {% block content %}
-
-        {% endblock%}
         <center><b>Le 13 mars 2021 à 11h-wedding day-église assemblée de Dieu Toît rouge temple shalom/Yopougon <a href="https://goo.gl/maps/6JJKFVjtEGVZE22d6">localisation</a> </b></center> 
+
+    </div><!-- /.container -->
 
     <!-- FOOTER -->
     <footer class="footer-custom">

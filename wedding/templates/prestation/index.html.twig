@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TEAM_MAYA-Prestations{% endblock %}
+
+{% block content %}
+<h2>Nos Prestations</h2>
+	<p>N'heister pas à prendre contact avec notre equipe nous vous  repondrons dans un bref délai.<a href="{{path('contact')}}">Nous contacter</a></p>
+
+    {% for message in app.flashes('notice')%}
+     <div class="alert alert-info">{{ message }}</div>
+    {% endfor %}
+
+	
+{% endblock %}

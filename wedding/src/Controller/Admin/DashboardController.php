@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Header;
 use App\Entity\Prestation;
+use App\Entity\Feature;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -32,5 +33,6 @@ class DashboardController extends AbstractDashboardController
       //  yield MenuItem::linkToCrud('User', 'fas fa-user', EntityClass::class);
         yield MenuItem::linkToCrud('Header', 'fas fa-heart', Header::class);
          yield MenuItem::linkToCrud('Prestation', 'fa fa-list', Prestation::class);
+         yield MenuItem::linkToCrud('Feature', 'fas fa-images', Feature::class);
     }
 }

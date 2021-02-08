@@ -1,0 +1,52 @@
+<body>
+
+	<center><h2><b> <span style="color:blue"> Récapitulatif Liste {{lien|upper}} :</span> </b></h2> 
+	</center>
+
+
+	{% if data is iterable %}
+		<div class="list-wedding">
+			<table align="center">
+				<thead>
+					<tr class="table-danger">
+						<th scope="col">#</th>
+						<th scope="col">Nom</th>
+						<th scope="col">Prenom</th>
+						<th scope="col">Email</th>
+						<th scope="col">Contact</th>
+						<th scope="col">Pays</th>
+						<th scope="col">WeddingPass</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for invite in data %}
+						<tr>
+							<th scope="row"></th>
+							<td>{{invite.nom}}</td>
+							<td>{{invite.prenom}}</td>
+							<td>{{invite.email}}</td>
+							<td>{{invite.phone}}</td>
+							<td>{{invite.pays}}</td>
+							<td>{{invite.passWedding}}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+
+	{% else %}
+		{# users is probably a string #}
+		Hello {{ data }}!
+	{% endif %}
+
+
+
+	<hr>
+	<center style="color:#FA8072">
+		{{'© 2017-2020 La T_MAYA, savoir-faire et savoir-être à partger'}}<br>
+		{{'Wedding 13 Mars 2021 - Martial&Alix '}}<br> 
+		{{'Privacy · Terms '}}
+	</center>
+
+
+</body>

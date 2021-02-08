@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\PrestationRepository;
+use App\Repository\FeatureRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=PrestationRepository::class)
+ * @ORM\Entity(repositoryClass=FeatureRepository::class)
  */
-class Prestation
+class Feature
 {
     /**
      * @ORM\Id
@@ -20,17 +20,17 @@ class Prestation
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $subtitle;
 
     /**
      * @ORM\Column(type="text")
      */
     private $content;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $btnTitle;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -42,14 +42,26 @@ class Prestation
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getName(): ?string
     {
-        return $this->title;
+        return $this->name;
     }
 
-    public function setTitle(string $title): self
+    public function setName(string $name): self
     {
-        $this->title = $title;
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getSubtitle(): ?string
+    {
+        return $this->subtitle;
+    }
+
+    public function setSubtitle(string $subtitle): self
+    {
+        $this->subtitle = $subtitle;
 
         return $this;
     }
@@ -62,18 +74,6 @@ class Prestation
     public function setContent(string $content): self
     {
         $this->content = $content;
-
-        return $this;
-    }
-
-    public function getBtnTitle(): ?string
-    {
-        return $this->btnTitle;
-    }
-
-    public function setBtnTitle(string $btnTitle): self
-    {
-        $this->btnTitle = $btnTitle;
 
         return $this;
     }

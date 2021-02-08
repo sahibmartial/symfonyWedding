@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wedding-Invitation{% endblock %}
+
+
+{% block content %}
+
+	{% for message in app.flashes('notice')%}
+     <div class="alert alert-info">{{ message }}</div>
+    {% endfor %}
+	
+	<h1>Obtenir Liste invites à partir du lien:</h1>
+
+	<div class="col-md-4">{{form(form)}}</div>
+
+	
+
+{% endblock %}
